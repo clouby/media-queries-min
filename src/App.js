@@ -1,11 +1,11 @@
-import React from 'react';
-import { MediaQueries } from 'components/MediaQueries';
-import './App.css';
+import React from 'react'
+import { MediaQueries } from 'components/MediaQueries'
+import './App.css'
 
 function App() {
-  const [size, setSize] = React.useState('xs');
+  const [size, setSize] = React.useState('xs')
 
-  const handleSelect = e => setSize(e.target.value);
+  const handleSelect = (e) => setSize(e.target.value)
 
   return (
     <div className="App">
@@ -26,11 +26,11 @@ function App() {
           <option value="md">md</option>
         </select>
         <MediaQueries size={size}>
-          {matches => <h1>{matches ? '🎉' : '😥'}</h1>}
+          {(matches) => <h1>{matches ? '🎉' : '😥'}</h1>}
         </MediaQueries>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

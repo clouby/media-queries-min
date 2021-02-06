@@ -1,1 +1,1 @@
-export { MediaQueries } from './MediaQueries';
+export { MediaQueries } from './MediaQueries'
