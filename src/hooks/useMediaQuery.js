@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { generateQuery } from 'utils'
+import { generateQuery } from './../utils'
 
 function useMediaQuery(value) {
   const media = useMemo(() => window.matchMedia(generateQuery(value)), [value])

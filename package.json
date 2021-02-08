@@ -1,7 +1,21 @@
 {
   "name": "media-queries-min",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
+  "author": "clouby",
+  "description": "Simplest way to match media queries using Child Functions and Hooks",
+  "homepage": "https://github.com/clouby/media-queries-min#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clouby/media-queries-min.git"
+  },
+  "bugs": {
+    "url": "https://github.com/clouby/media-queries-min/issues"
+  },
+  "source": "src/index.js",
+  "main": "lib/media-queries-min.js",
+  "umd:main": "lib/media-queries-min.umd.js",
+  "module": "lib/media-queries-min.m.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -12,9 +26,11 @@
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rimraf lib && microbundle -o lib/ --name media-queries-min --sourcemap false",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier:write": "prettier --write \"src/**/*.js\""
@@ -38,9 +54,14 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
     "husky": "^4.3.8",
+    "microbundle": "^0.13.0",
     "prettier": "2.2.1",
-    "pretty-quick": "^3.1.0"
+    "pretty-quick": "^3.1.0",
+    "rimraf": "^3.0.2"
   },
   "husky": {
     "hooks": {

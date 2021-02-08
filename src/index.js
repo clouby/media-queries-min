@@ -1,2 +1,2 @@
-export { useMediaQuery } from 'hooks/useMediaQuery'
-export { MediaQuery } from 'components/MediaQuery'
+export { useMediaQuery } from './hooks/useMediaQuery'
+export { MediaQuery } from './components/MediaQuery'

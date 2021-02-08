@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { useMediaQuery } from 'hooks/useMediaQuery'
+import { useMediaQuery } from './../../hooks/useMediaQuery'
 import PropTypes from 'prop-types'
 
 function MediaQueryComponent({ children, size, maxWidth, minWidth }) {
