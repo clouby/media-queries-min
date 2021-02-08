@@ -1,1 +1,0 @@
-export { MediaQueries } from './MediaQueries'

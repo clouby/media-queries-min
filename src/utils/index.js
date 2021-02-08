@@ -1,4 +1,4 @@
-import * as json2mq from 'json2mq'
+import json2mq from 'json2mq'
 
 const defaultBreakpoint = 'xs'
 
@@ -8,6 +8,20 @@ const breakpoints = {
   md: json2mq({ minWidth: 768 }),
   lg: json2mq({ minWidth: 992 }),
   xl: json2mq({ minWidth: 1200 })
+}
+
+const defaultParams = {
+  size: defaultBreakpoint,
+  maxWidth: null,
+  minWidth: null
+}
+
+function parseData(value) {
+  if (typeof value === 'string') return { ...defaultParams, size: value }
+
+  if (!value) return defaultParams
+
+  return value
 }
 
 export const convertToQuery = (query) => json2mq(query)
@@ -20,11 +34,19 @@ export const getBreakpoint = (size = defaultBreakpoint) => {
   return brk
 }
 
-export const generateQuery = ({ size, maxWidth, minWidth }) => {
-  if (maxWidth || minWidth) {
-    const newQuery = { maxWidth, minWidth }
+export const generateQuery = (value) => {
+  const { size, minWidth, maxWidth } = parseData(value)
 
-    return convertToQuery(newQuery)
+  if (maxWidth || minWidth) {
+    const newQuery = {}
+
+    if (maxWidth) newQuery.maxWidth = maxWidth
+
+    if (minWidth) newQuery.minWidth = minWidth
+
+    const result = convertToQuery(newQuery)
+
+    return result
   }
 
   return getBreakpoint(size)

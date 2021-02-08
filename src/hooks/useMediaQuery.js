@@ -1,12 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { generateQuery } from 'utils'
-import PropTypes from 'prop-types'
 
-function MediaQueries({ children, size, maxWidth, minWidth }) {
-  const media = useMemo(
-    () => window.matchMedia(generateQuery({ size, maxWidth, minWidth })),
-    [size, maxWidth, minWidth]
-  )
+function useMediaQuery(value) {
+  const media = useMemo(() => window.matchMedia(generateQuery(value)), [value])
   const [matches, setMatches] = useState(media.matches)
 
   useEffect(() => {
@@ -25,17 +21,7 @@ function MediaQueries({ children, size, maxWidth, minWidth }) {
     return () => media.removeEventListener('change', handleChange)
   }, [media, setMatches])
 
-  return <>{children(matches)}</>
+  return { matches }
 }
 
-MediaQueries.propTypes = {
-  maxWidth: PropTypes.string,
-  minWidth: PropTypes.string,
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired
-}
-
-MediaQueries.defaultProps = {
-  size: 'xs'
-}
-
-export { MediaQueries }
+export { useMediaQuery }
