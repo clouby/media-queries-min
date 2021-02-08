@@ -102,6 +102,8 @@ const state = useMediaQuery(initialState)
 
 ##### Key/Type: `minWidth=<String,Number>`
 
+---
+
 ## Contribution
 
 All the feedbacks/issues are very welcome! 😄
