@@ -11,7 +11,7 @@ yarn add media-queries-min
 ## Child Function
 
 ```javascript
-import { MediaQuery } from 'query-media-min'
+import { MediaQuery } from 'media-queries-min'
 
 function App() {
   // ...
@@ -29,7 +29,7 @@ function App() {
 ## Hooks
 
 ```javascript
-import { useMediaQuery } from 'query-media-min'
+import { useMediaQuery } from 'media-queries-min'
 
 function App() {
   const { matches } = useMediaQuery('md')
