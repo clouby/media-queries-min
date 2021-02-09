@@ -1,11 +1,11 @@
-import { memo, Fragment } from 'react'
+import React from 'react'
 import { useMediaQuery } from './../../hooks/useMediaQuery'
 import PropTypes from 'prop-types'
 
 function MediaQueryComponent({ children, size, maxWidth, minWidth }) {
   const value = useMediaQuery({ size, maxWidth, minWidth })
 
-  return <Fragment>{children(value)}</Fragment>
+  return <React.Fragment>{children(value)}</React.Fragment>
 }
 
 MediaQueryComponent.propTypes = {
@@ -18,6 +18,6 @@ MediaQueryComponent.defaultProps = {
   size: 'xs'
 }
 
-const MediaQuery = memo(MediaQueryComponent)
+const MediaQuery = React.memo(MediaQueryComponent)
 
 export { MediaQuery, useMediaQuery }

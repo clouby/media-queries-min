@@ -1,6 +1,6 @@
 {
   "name": "media-queries-min",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "author": "clouby",
   "description": "Simplest way to match media queries using Child Functions and Hooks",
@@ -30,7 +30,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "rimraf lib && microbundle -o lib/ --name media-queries-min --jsx React.createElement  --sourcemap false",
+    "build": "rimraf lib && microbundle-crl -o lib/ --name media-queries-min ",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier:write": "prettier --write \"src/**/*.js\""
@@ -58,7 +58,7 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "husky": "^4.3.8",
-    "microbundle": "^0.13.0",
+    "microbundle-crl": "^0.13.11",
     "prettier": "2.2.1",
     "pretty-quick": "^3.1.0",
     "rimraf": "^3.0.2"

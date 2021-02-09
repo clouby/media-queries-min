@@ -1,11 +1,13 @@
-import { useEffect, useMemo, useState } from 'react'
+import React from 'react'
 import { generateQuery } from './../utils'
 
 function useMediaQuery(value) {
-  const media = useMemo(() => window.matchMedia(generateQuery(value)), [value])
-  const [matches, setMatches] = useState(media.matches)
+  const media = React.useMemo(() => window.matchMedia(generateQuery(value)), [
+    value
+  ])
+  const [matches, setMatches] = React.useState(media.matches)
 
-  useEffect(() => {
+  React.useEffect(() => {
     // Hamdler function which provide the result about match changes
     function handleChange(query) {
       setMatches(query.matches)
