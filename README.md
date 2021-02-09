@@ -100,9 +100,15 @@ const state = useMediaQuery(initialState)
 
 ##### Key/Type: `maxWidth=<String,Number>`
 
+```js
+<MediaQuery maxWidth={'30vw'}>{(state) => {}}</MediaQuery>
+```
+
 ##### Key/Type: `minWidth=<String,Number>`
 
----
+```js
+<MediaQuery minWidth={'20vw'}>{(state) => {}}</MediaQuery>
+```
 
 ## Contribution
 
