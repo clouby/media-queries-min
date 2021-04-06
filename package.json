@@ -1,6 +1,6 @@
 {
   "name": "media-queries-min",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "author": "clouby",
   "description": "Simplest way to match media queries using Child Functions and Hooks",
