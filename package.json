@@ -1,6 +1,6 @@
 {
   "name": "media-queries-min",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "private": false,
   "author": "clouby",
   "description": "Simplest way to match media queries using Child Functions and Hooks",
@@ -13,12 +13,12 @@
     "url": "https://github.com/clouby/media-queries-min/issues"
   },
   "source": "src/main/index.js",
-  "main": "lib/media-queries-min.js",
-  "umd:main": "lib/media-queries-min.umd.js",
-  "module": "lib/media-queries-min.m.js",
+  "main": "./lib/media-queries-min.js",
+  "umd:main": "./lib/media-queries-min.umd.js",
+  "module": "./lib/media-queries-min.m.js",
   "exports": {
-    ".": "./lib/media-queries-min.modern.js",
-    "./emerald-ui": "./lib/emerald-ui.modern.js"
+    ".": "./lib/media-queries-min.js",
+    "./emerald-ui": "./lib/emerald-ui.js"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
