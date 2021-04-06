@@ -90,13 +90,13 @@ const state = useMediaQuery(initialState)
 
 ###### Default: `xs`
 
-| Key |   Type   | Description                              |
-| --- | :------: | ---------------------------------------- |
-| xs  | `string` | Assign a new value query to `<= 576px`.  |
-| sm  | `string` | Assign a new value query to `>= 576px`.  |
-| md  | `string` | Assign a new value query to `>= 768px`.  |
-| lg  | `string` | Assign a new value query to `>= 992px`.  |
-| xl  | `string` | Assign a new value query to `>= 1200px`. |
+| Key |   Type   | Description                             |
+| --- | :------: | --------------------------------------- |
+| xs  | `string` | Assign a new value query to `<= 576px`  |
+| sm  | `string` | Assign a new value query to `>= 576px`  |
+| md  | `string` | Assign a new value query to `>= 768px`  |
+| lg  | `string` | Assign a new value query to `>= 992px`  |
+| xl  | `string` | Assign a new value query to `>= 1200px` |
 
 ##### Key/Type: `maxWidth=<String,Number>`
 
@@ -109,6 +109,35 @@ const state = useMediaQuery(initialState)
 ```js
 <MediaQuery minWidth={'20vw'}>{(state) => {}}</MediaQuery>
 ```
+
+---
+
+### Templates
+
+Tag: `emerald-ui`
+
+```javascript
+import { MediaQuery } from 'media-queries-min/lib/emerald-ui'
+
+function App() {
+  return (
+    <div>
+      <MediaQuery size="xs">
+        {({ matches }) => <> {matches ? '🎉 ' : '😥'} </>}
+      </MediaQuery>
+    </div>
+  )
+}
+```
+
+###### Default: `xs`
+
+| Key |   Type   | Description                             |
+| --- | :------: | --------------------------------------- |
+| xs  | `string` | Assign a new value query to `<= 480px`  |
+| sm  | `string` | Assign a new value query to `>= 768px`  |
+| md  | `string` | Assign a new value query to `>= 992px`  |
+| lg  | `string` | Assign a new value query to `>= 1200px` |
 
 ## Contribution
 
