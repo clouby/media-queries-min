@@ -1,29 +1,36 @@
 import React from 'react'
 import { generateQuery } from './../utils'
 
-function useMediaQuery(value) {
-  const media = React.useMemo(() => window.matchMedia(generateQuery(value)), [
-    value
-  ])
-  const [matches, setMatches] = React.useState(media.matches)
+function factoryHook(template = 'default') {
+  function useMediaQuery(value) {
+    const media = React.useMemo(
+      () => window.matchMedia(generateQuery(value, template)),
+      [value]
+    )
+    const [matches, setMatches] = React.useState(media.matches)
 
-  React.useEffect(() => {
-    // Hamdler function which provide the result about match changes
-    function handleChange(query) {
-      setMatches(query.matches)
-    }
+    React.useEffect(() => {
+      // Handler function which provide the result about match changes
+      function handleChange(query) {
+        setMatches(query.matches)
+      }
 
-    // Change when the size initialize the new breakpoint
-    handleChange(media)
+      // Change when the size initialize the new breakpoint
+      handleChange(media)
 
-    // Trigger when the value changes on media query
-    media.addEventListener('change', handleChange)
+      // Trigger when the value changes on media query
+      media.addEventListener('change', handleChange)
 
-    // Remove the listener when the component is unmounted
-    return () => media.removeEventListener('change', handleChange)
-  }, [media, setMatches])
+      // Remove the listener when the component is unmounted
+      return () => media.removeEventListener('change', handleChange)
+    }, [media, setMatches])
 
-  return { matches }
+    return { matches }
+  }
+
+  return useMediaQuery
 }
 
-export { useMediaQuery }
+export const factoryHooks = factoryHook
+
+export const useMediaQuery = factoryHook('default')

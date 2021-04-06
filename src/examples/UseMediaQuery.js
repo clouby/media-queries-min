@@ -1,5 +1,5 @@
 import React from 'react'
-import { useMediaQuery } from 'hooks/useMediaQuery'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 
 function UseMediaQuery({ size = 'xs' }) {
   const { matches } = useMediaQuery(size)

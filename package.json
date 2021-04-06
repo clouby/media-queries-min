@@ -1,6 +1,6 @@
 {
   "name": "media-queries-min",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": false,
   "author": "clouby",
   "description": "Simplest way to match media queries using Child Functions and Hooks",
@@ -16,6 +16,10 @@
   "main": "lib/media-queries-min.js",
   "umd:main": "lib/media-queries-min.umd.js",
   "module": "lib/media-queries-min.m.js",
+  "exports": {
+    ".": "./dist/media-queries-min.modern.js",
+    "./emerald-ui": "./dist/emerald-ui.modern.js"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -30,9 +34,10 @@
     "lib"
   ],
   "scripts": {
-    "build": "rimraf lib && microbundle-crl -o lib/ --name media-queries-min ",
+    "build": "rimraf lib && microbundle-crl src/*.js -o lib/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "start": "react-scripts start",
     "prettier:write": "prettier --write \"src/**/*.js\""
   },
   "eslintConfig": {

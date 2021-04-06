@@ -1,1 +1,1 @@
-export { MediaQuery } from './MediaQuery'
+export { MediaQuery, factoryComponents } from './MediaQuery'
